@@ -2,7 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.3.4.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
 	id 'java'
-	id 'war'
+	id 'war' // war 파일로 빌드해서 배포하려면
 }
 
 group = 'worker'
@@ -26,19 +26,20 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	
 	compile 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.1'
-	compile 'org.springframework.boot:spring-boot-starter-jdbc'
+	compile 'org.springframework.boot:spring-boot-starter-jdbc'	
 		
 	runtime 'com.oracle.ojdbc:ojdbc8'
 	
 	annotationProcessor 'org.projectlombok:lombok'
-	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat' //외부톰캣 사용시 providedRuntime
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 	testImplementation 'org.springframework.security:spring-security-test'
 	
-	implementation files('libs/orai18n.jar')
-	implementation fileTree(dir: 'libs', include: '*.jar')
+	compile 'com.oracle.orai18n:12.2.0.1' // 오라클 연동시에 언어설정관련 에러가 발생할 경우
+	//implementation files('libs/orai18n.jar') // 오라클 연동시에 언어설정관련 에러가 발생할 경우, 외부라이브러러리로 등록하는 방법
+	//implementation fileTree(dir: 'libs', include: '*.jar') //외부 jar 를 등록할때
 }
 
 test {
