@@ -2,7 +2,7 @@
 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="pmserver.dao.CommonDAO">
+<mapper namespace="pmserver.mapper.CommonMapper">
     <select id="selectPlatformPermission" resultType="String" parameterType="HashMap">		    
 		SELECT 
 		    DECODE(COUNT(REQUESTER_CD), 0, 0, 1) AS PERMIT

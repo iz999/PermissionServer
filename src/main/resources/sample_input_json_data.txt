@@ -1,0 +1,15 @@
+- input json sample
+{
+    "requesterCD" : "TEST",
+    "ipAddr" : "0.0.0.0",
+    "serviceCD" : "TEST",
+    "secretKey" : "XPTMXM"
+}
+
+- output json sample 
+{
+    "data": {
+        "permission": "1"
+    },
+    "errors": []
+}

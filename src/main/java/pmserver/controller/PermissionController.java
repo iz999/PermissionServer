@@ -25,7 +25,7 @@ public class PermissionController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(PermissionController.class);
 	
-	@Autowired
+	@Autowired //해당 빈을 찾아서 연결해준다.
 	private PermissionServerService permissionServerService;
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/platformPermission") //Restfull API 경로

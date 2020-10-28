@@ -9,12 +9,12 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 
 
 @SpringBootApplication
-public class PermissionServerApplication extends SpringBootServletInitializer {
+public class PermissionServerApplication extends SpringBootServletInitializer { //외부 톰캣으로 돌릴려면 SpringBootServletInitializer을 상속받는다.
 	
 	private static final Logger logger = LoggerFactory.getLogger(PermissionServerApplication.class);
 
 	@Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) { //SpringBootServletInitializer의 SpringApplicationBuilder를 오버라이드 한다.
 
       return builder.sources(PermissionServerApplication.class);
 
